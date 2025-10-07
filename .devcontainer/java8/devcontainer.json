@@ -1,0 +1,20 @@
+{
+    "name": "Java 8 Dev Container",
+    "dockerFile": "Dockerfile",
+    "features": {
+      "../features/java-common": {}
+    },
+    "workspaceFolder": "/workspace",
+    "mounts": [
+      "source=${localWorkspaceFolder},target=/workspace,type=bind",
+      "source=${localEnv:HOME}/.m2,target=/root/.m2,type=bind"
+    ],
+    "remoteEnv": {
+      "JAVA_VERSION": "8",
+      "JAVA_HOME": "/usr/local/openjdk-8"
+    },
+    "remoteUser": "vscode",
+    "postCreateCommand": "java -version",
+    "forwardPorts": [8080]
+  }
+  

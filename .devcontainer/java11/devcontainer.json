@@ -1,0 +1,19 @@
+{
+  "name": "Java 11 Dev Container",
+  "dockerFile": "Dockerfile",
+  "features": {
+    "../features/java-common": {}
+  },
+  "workspaceFolder": "/workspace",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "source=${localEnv:HOME}/.m2,target=/root/.m2,type=bind"
+  ],
+  "remoteEnv": {
+    "JAVA_VERSION": "11",
+    "JAVA_HOME": "/usr/lib/jvm/java-11-openjdk-amd64"
+  },
+  "remoteUser": "vscode",
+  "postCreateCommand": "java -version",
+  "forwardPorts": [8080]
+}
